@@ -1,21 +1,23 @@
-<h1 class="text-center" style='padding-bottom: 50px;'>Our Cocktails</h1>
 
-<div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), background-color: grey;">
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
+<%= render 'shared/banner' %>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+         <div class="card" style="background-image: url('<%= image_path('background.jpg') %>');">
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <%= link_to "description", cocktail_path(cocktail), class: "card-link" %>
           </div>
-          <img class="card-user avatar" src="http://placehold.it/50x50">
-          <%= link_to "description", cocktail_path(cocktail), class: "card-link" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="text-center" style='padding-top: 100px;'>
-  <%= link_to "create", new_cocktail_path %>
+<div class="text-center" id="home-bottom">
+  <%= link_to "create", new_cocktail_path, class: "btn btn-danger btn-lg" %>
 </div>
