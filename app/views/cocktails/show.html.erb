@@ -16,10 +16,7 @@
 <hr>
 
 <div class="text-center">
-  <%= link_to "Précédent", cocktails_path %>
-</div>
-<div class="text-center">
-  <%= link_to "Supprimer", cocktail_path(@cocktail), method: :delete %>
+  <%= link_to "Supprimer ce Cocktail", cocktail_path(@cocktail), method: :delete %>
 </div>
 
 <%= render 'doses/new', cocktail: @cocktail, dose: @dose%>
