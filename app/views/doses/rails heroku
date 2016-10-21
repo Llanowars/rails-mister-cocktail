@@ -1,9 +1,0 @@
-rails new $YOUR_APP_NAME -T --database=postgresql
-
-git push heroku master
-
-heroku run rake db:migrate
-
-heroku run rails c
-
-heroku git:remote -a app
