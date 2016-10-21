@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="text-center" >
-      <%= simple_form_for [cocktail, dose] do |f| %>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description %>
       <%= f.input :ingredient, collection: @ingredients %>
       <%= f.submit %>

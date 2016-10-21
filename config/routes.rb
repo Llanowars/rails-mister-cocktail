@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :cocktails do
     resources :doses, only: [ :new, :create, :destroy ]
   end
+
+  delete 'doses/:id' => 'doses#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
