@@ -5,13 +5,21 @@
     <% @cocktail.doses.each do |dose| %>
       <ul>
         <p><%= dose.description %></p>
+        <hr>
+        <p><%= dose.ingredient.name %></p>
       </ul>
+       <%= link_to "Supprimer", cocktail_dose_path(@cocktail, dose), method: :delete %>
     <% end %>
   </li>
 </div>
+
+<hr>
+
 <div class="text-center">
   <%= link_to "Précédent", cocktails_path %>
 </div>
 <div class="text-center">
   <%= link_to "Supprimer", cocktail_path(@cocktail), method: :delete %>
 </div>
+
+<%= render 'doses/new', cocktail: @cocktail, dose: @dose%>
