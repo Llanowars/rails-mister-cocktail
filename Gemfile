@@ -31,6 +31,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'rails-controller-testing'
 gem 'figaro'
+gem 'cloudinary', '1.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
