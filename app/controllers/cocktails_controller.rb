@@ -21,7 +21,7 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
-      redirect_to cocktail_path
+      render :new
     end
   end
 
