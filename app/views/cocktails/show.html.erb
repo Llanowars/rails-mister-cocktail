@@ -1,14 +1,15 @@
 <div class="text-center">
   <li>
     <ul><%= @cocktail.name %></ul>
-    <br>
+    <hr>
+
     <% @cocktail.doses.each do |dose| %>
       <ul>
         <p><%= dose.description %></p>
-        <hr>
         <p><%= dose.ingredient.name %></p>
       </ul>
        <%= link_to "Supprimer", cocktail_dose_path(@cocktail, dose), method: :delete %>
+      <hr>
     <% end %>
   </li>
 </div>
