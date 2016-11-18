@@ -1,23 +1,31 @@
-<div class="text-center">
-  <li>
-    <ul><%= @cocktail.name %></ul>
-    <hr>
+<div class="container">
 
-    <% @cocktail.doses.each do |dose| %>
-      <ul>
-        <p><%= dose.description %></p>
-        <p><%= dose.ingredient.name %></p>
-      </ul>
-       <%= link_to "Supprimer", cocktail_dose_path(@cocktail, dose), method: :delete %>
-      <hr>
-    <% end %>
-  </li>
+  <div class="row">
+    <div class="card col-xs-12 col-sm-4 col-sm-offset-4"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+      <div class="card-description">
+        <h2><%= @cocktail.name %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <li>
+      <% @cocktail.doses.each do |dose| %>
+        <ul>
+          <p><%= dose.description %></p>
+          <p><%= dose.ingredient.name %></p>
+        </ul>
+         <%= link_to "Supprimer ingrédient", cocktail_dose_path(@cocktail, dose), method: :delete, class: 'btn btn-danger' %>
+        <hr>
+      <% end %>
+    </li>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Supprimer cocktail", cocktail_path(@cocktail), method: :delete, class: 'btn btn-danger' %>
+  </div>
+
+  <%= render 'doses/new'%>
 </div>
-
-<hr>
-
-<div class="text-center">
-  <%= link_to "Supprimer ce Cocktail", cocktail_path(@cocktail), method: :delete %>
-</div>
-
-<%= render 'doses/new'%>

@@ -5,13 +5,15 @@
       <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description %>
       <%= f.input :ingredient, collection: @ingredients %>
-      <%= f.submit %>
+      <%= f.submit 'Create Dose', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
 
+<hr>
+
 <div class="text-center" >
-  <%= link_to "home", cocktails_path %>
+  <%= link_to "home", cocktails_path, class: 'btn btn-info' %>
 </div
 
