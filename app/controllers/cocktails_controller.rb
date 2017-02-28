@@ -3,6 +3,7 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy]
 
   def index
+    # response.headers.delete('X-Frame-Options')
     @cocktails = Cocktail.all
     @cocktail = Cocktail.new
   end
